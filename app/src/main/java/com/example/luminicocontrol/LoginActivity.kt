@@ -11,6 +11,16 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Verificar sesión activa persistente
+        val prefs = getSharedPreferences("LuminicoSession", MODE_PRIVATE)
+        val usuarioActivo = prefs.getString("usuario_activo", null)
+        if (!usuarioActivo.isNullOrEmpty()) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
+
         setContentView(R.layout.activity_login)
 
         val dbHelper = AdminSQLiteOpenHelper(this)
@@ -26,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
 
             if (user.isEmpty() || pass.isEmpty()) {
                 Toast.makeText(this, "Completa el usuario y la contraseña", Toast.LENGTH_SHORT).show()
+            } else if (user.length < 3) {
+                Toast.makeText(this, "El usuario debe tener al menos 3 caracteres", Toast.LENGTH_SHORT).show()
             } else if (pass.length < 4) {
                 Toast.makeText(this, "La contraseña debe tener mínimo 4 caracteres", Toast.LENGTH_SHORT).show()
             } else {
@@ -48,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 val accesoValido = dbHelper.validarUsuario(user, pass)
                 if (accesoValido) {
+                    prefs.edit().putString("usuario_activo", user).apply()
                     Toast.makeText(this, "Autenticación correcta", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)

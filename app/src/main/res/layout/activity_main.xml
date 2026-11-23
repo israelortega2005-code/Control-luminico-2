@@ -1,429 +1,896 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F6FA"
-    tools:ignore="HardcodedText">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:overScrollMode="ifContentScrolls">
 
-    <!-- Navegacion y Titulo -->
-    <TextView
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:includeFontPadding="false"
-        android:text="‹"
-        android:textColor="#0F172A"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingBottom="36dp"
+        tools:ignore="HardcodedText">
 
-    <TextView
-        android:id="@+id/tvTituloPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Control Luminico"
-        android:textColor="#0F172A"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/btnBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnBack" />
+        <!-- Panel De control -->
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="‹"
+            android:textColor="#0F172A"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Tarjeta del Microcontrolador Interactiva -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardHeroDevice"
-        android:layout_width="156dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#0284C7"
-        app:cardCornerRadius="28dp"
-        app:cardElevation="4dp"
-        app:strokeColor="#38BDF8"
-        app:strokeWidth="2dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloPanel">
+        <TextView
+            android:id="@+id/tvTituloPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Control Lumínico"
+            android:textColor="#0F172A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!-- interfaz Interactiva -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHeroDevice"
+            android:layout_width="156dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#0284C7"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#38BDF8"
+            app:strokeWidth="2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloPanel">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_gravity="top|start"
-                android:layout_marginStart="-35dp"
-                android:layout_marginTop="-40dp"
-                app:cardBackgroundColor="#5500E5FF"
-                app:cardCornerRadius="65dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="-25dp"
-                android:layout_marginBottom="-30dp"
-                app:cardBackgroundColor="#440369A1"
-                app:cardCornerRadius="55dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp" />
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="top|start"
+                    android:layout_marginStart="-35dp"
+                    android:layout_marginTop="-40dp"
+                    app:cardBackgroundColor="#5500E5FF"
+                    app:cardCornerRadius="65dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="-25dp"
+                    android:layout_marginBottom="-30dp"
+                    app:cardBackgroundColor="#440369A1"
+                    app:cardCornerRadius="55dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.08"
+                        android:text="ESP32"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSubtituloConexion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="WS2812B • EN LÍNEA"
+                        android:textColor="#E0F2FE"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvColaOffline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="0 pendientes en cola"
+                        android:textColor="#FDE047"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sensor de Audio -->
+        <LinearLayout
+            android:id="@+id/layoutBarraAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardHeroDevice">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡"
+                android:textColor="#0284C7"
+                android:textSize="14sp" />
+
+            <ProgressBar
+                android:id="@+id/pbAudioLevel"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="95dp"
+                android:layout_height="6dp"
+                android:layout_marginHorizontal="10dp"
+                android:max="100"
+                android:progress="0"
+                android:progressBackgroundTint="#CBD5E1"
+                android:progressTint="#00B4D8" />
+
+            <TextView
+                android:id="@+id/tvNivelAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 dB"
+                android:textColor="#334155"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Panel Monitoreo en Tiempo Real -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMonitoreo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutBarraAudio">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:letterSpacing="0.08"
-                    android:text="ESP32"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvSubtituloConexion"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Monitoreo en Tiempo Real"
+                        android:textColor="#0F172A"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btnInfoMonitoreo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="6dp"
+                        android:text="ⓘ"
+                        android:textColor="#0284C7"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="WS2812B • EN LÍNEA"
-                    android:textColor="#E0F2FE"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <!-- PIR -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        app:cardBackgroundColor="#F8FAFC"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#CBD5E1"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PIR"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMetricPir"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Limpio"
+                                android:textColor="#22C55E"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Audio -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="2dp"
+                        app:cardBackgroundColor="#F8FAFC"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#CBD5E1"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Audio"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMetricAudio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0"
+                                android:textColor="#0284C7"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Luz LDR -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="2dp"
+                        app:cardBackgroundColor="#F8FAFC"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#CBD5E1"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Luz LDR"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMetricLdr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0"
+                                android:textColor="#D97706"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Estilo -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        app:cardBackgroundColor="#F8FAFC"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#CBD5E1"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Estilo"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMetricEstilo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Auto"
+                                android:textColor="#7C3AED"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
             </LinearLayout>
-        </FrameLayout>
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-    <!-- Telemetria de Audio -->
-    <LinearLayout
-        android:id="@+id/layoutBarraAudio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardHeroDevice">
-
+        <!-- Panel Principal -->
         <TextView
+            android:id="@+id/tvTituloModos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="⚡"
-            android:textColor="#0284C7"
-            android:textSize="14sp" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Efectos de Iluminación"
+            android:textColor="#0F172A"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardMonitoreo" />
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="95dp"
-            android:layout_height="6dp"
-            android:layout_marginHorizontal="10dp"
-            android:max="100"
-            android:progress="42"
-            android:progressBackgroundTint="#CBD5E1"
-            android:progressTint="#00B4D8" />
-
-        <TextView
-            android:id="@+id/tvNivelAudio"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/btnApagar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="42 dB"
-            android:textColor="#334155"
-            android:textSize="13sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_marginEnd="24dp"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@id/tvTituloModos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTituloModos" />
 
-    <!-- Controles Principales -->
-    <TextView
-        android:id="@+id/tvTituloModos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="22dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Efectos de Iluminación"
-        android:textColor="#0F172A"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutBarraAudio" />
-
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/btnApagar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:checked="true"
-        app:layout_constraintBottom_toBottomOf="@id/tvTituloModos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvTituloModos" />
-
-    <!-- Modos de Iluminacion Centralizados -->
-    <HorizontalScrollView
-        android:id="@+id/scrollModosLuz"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:clipToPadding="false"
-        android:paddingHorizontal="24dp"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloModos">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="4dp">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnModoColor"
-                android:layout_width="108dp"
-                android:layout_height="142dp"
-                android:layout_marginEnd="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="#2563EB"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="90dp" android:layout_height="90dp" android:layout_gravity="top|start" android:layout_marginStart="-20dp" android:layout_marginTop="-20dp" app:cardBackgroundColor="#5538BDF8" app:cardCornerRadius="45dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="bottom|end" android:layout_marginEnd="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#552DD4BF" app:cardCornerRadius="55dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Color Fijo" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" android:paddingHorizontal="8dp"/>
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnModoRitmo"
-                android:layout_width="108dp"
-                android:layout_height="142dp"
-                android:layout_marginEnd="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="#5B0E91"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="125dp" android:layout_height="125dp" android:layout_gravity="top|end" android:layout_marginTop="-35dp" android:layout_marginEnd="-30dp" app:cardBackgroundColor="#EEFF007F" app:cardCornerRadius="62dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="bottom|start" android:layout_marginStart="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#BBAA00FF" app:cardCornerRadius="50dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Ritmo" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" />
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnModoGaming"
-                android:layout_width="108dp"
-                android:layout_height="142dp"
-                android:layout_marginEnd="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="#FF5100"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|start" android:layout_marginStart="-30dp" android:layout_marginTop="-30dp" app:cardBackgroundColor="#EEFFEA00" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="115dp" android:layout_height="115dp" android:layout_gravity="bottom|end" android:layout_marginEnd="-25dp" android:layout_marginBottom="-30dp" app:cardBackgroundColor="#DDFF0055" app:cardCornerRadius="58dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Multicolor" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" />
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnModoFreeze"
-                android:layout_width="108dp"
-                android:layout_height="142dp"
-                android:layout_marginEnd="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="#00A86B"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|end" android:layout_marginTop="-30dp" android:layout_marginEnd="-25dp" app:cardBackgroundColor="#EE76FF03" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="bottom|start" android:layout_marginStart="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#CC00BFA5" app:cardCornerRadius="55dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Neón" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" />
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnModoWave"
-                android:layout_width="108dp"
-                android:layout_height="142dp"
-                android:layout_marginEnd="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="#3B0764"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="1.5dp">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|start" android:layout_marginStart="-25dp" android:layout_marginTop="-30dp" app:cardBackgroundColor="#EE00E5FF" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Onda" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" />
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnModoSeguridad"
-                android:layout_width="108dp"
-                android:layout_height="142dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="#1E1B4B"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="3dp"
-                app:strokeColor="#00B4D8"
-                app:strokeWidth="2.5dp">
-                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="115dp" android:layout_height="115dp" android:layout_gravity="top|start" android:layout_marginStart="-30dp" android:layout_marginTop="-25dp" app:cardBackgroundColor="#EEFF1744" app:cardCornerRadius="58dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="bottom|end" android:layout_marginEnd="-30dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#EE2979FF" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Seguridad" android:textColor="#FFFFFF" android:textSize="17sp" android:textStyle="bold" />
-                </FrameLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- Contenedor Maestro de Sub-paneles -->
-    <FrameLayout
-        android:id="@+id/contenedorSubPaneles"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scrollModosLuz">
-
-        <!-- PANEL RITMO -->
+        <!-- Modos de Iluminacion Centralizados -->
         <HorizontalScrollView
-            android:id="@+id/panelSubModosRitmo"
-            android:layout_width="match_parent"
+            android:id="@+id/scrollModosLuz"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:clipToPadding="false"
             android:paddingHorizontal="24dp"
             android:scrollbars="none"
-            android:visibility="gone">
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="8dp">
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoAuto" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Auto-Rotación" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Cicla 12 Estilos" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoVu" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VU Meter" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Verde a Rojo" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoEspectro" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Espectro RGB" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Arcoíris dinámico" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoBeat" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Arcoíris Beat" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Giro acelerado" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoFuego" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fuego Rítmico" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Llamas con la voz" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoDestellos" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Destellos" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Chispas rítmicas" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoPulso" android:layout_width="145dp" android:layout_height="65dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pulso Bass" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Impacto de color" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloModos">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnModoColor"
+                    android:layout_width="108dp"
+                    android:layout_height="142dp"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#2563EB"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#FFFFFF"
+                    app:strokeWidth="1.5dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="90dp" android:layout_height="90dp" android:layout_gravity="top|start" android:layout_marginStart="-20dp" android:layout_marginTop="-20dp" app:cardBackgroundColor="#5538BDF8" app:cardCornerRadius="45dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="bottom|end" android:layout_marginEnd="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#552DD4BF" app:cardCornerRadius="55dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Color Fijo" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" android:paddingHorizontal="8dp" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="1" android:shadowRadius="4"/>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnModoRitmo"
+                    android:layout_width="108dp"
+                    android:layout_height="142dp"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#5B0E91"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#FFFFFF"
+                    app:strokeWidth="1.5dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="125dp" android:layout_height="125dp" android:layout_gravity="top|end" android:layout_marginTop="-35dp" android:layout_marginEnd="-30dp" app:cardBackgroundColor="#EEFF007F" app:cardCornerRadius="62dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="bottom|start" android:layout_marginStart="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#BBAA00FF" app:cardCornerRadius="50dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Ritmo" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="1" android:shadowRadius="4"/>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnModoGaming"
+                    android:layout_width="108dp"
+                    android:layout_height="142dp"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#FF5100"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#FFFFFF"
+                    app:strokeWidth="1.5dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|start" android:layout_marginStart="-30dp" android:layout_marginTop="-30dp" app:cardBackgroundColor="#EEFFEA00" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="115dp" android:layout_height="115dp" android:layout_gravity="bottom|end" android:layout_marginEnd="-25dp" android:layout_marginBottom="-30dp" app:cardBackgroundColor="#DDFF0055" app:cardCornerRadius="58dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Multicolor" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="1" android:shadowRadius="4"/>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnModoFreeze"
+                    android:layout_width="108dp"
+                    android:layout_height="142dp"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#00A86B"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#FFFFFF"
+                    app:strokeWidth="1.5dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|end" android:layout_marginTop="-30dp" android:layout_marginEnd="-25dp" app:cardBackgroundColor="#EE76FF03" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="bottom|start" android:layout_marginStart="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#CC00BFA5" app:cardCornerRadius="55dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Neón" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="1" android:shadowRadius="4"/>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnModoWave"
+                    android:layout_width="108dp"
+                    android:layout_height="142dp"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#3B0764"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#FFFFFF"
+                    app:strokeWidth="1.5dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="top|start" android:layout_marginStart="-25dp" android:layout_marginTop="-30dp" app:cardBackgroundColor="#EE00E5FF" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Ambiente" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="1" android:shadowRadius="4"/>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnModoSeguridad"
+                    android:layout_width="108dp"
+                    android:layout_height="142dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#1E1B4B"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="#00B4D8"
+                    app:strokeWidth="2.5dp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="115dp" android:layout_height="115dp" android:layout_gravity="top|start" android:layout_marginStart="-30dp" android:layout_marginTop="-25dp" app:cardBackgroundColor="#EEFF1744" app:cardCornerRadius="58dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="120dp" android:layout_height="120dp" android:layout_gravity="bottom|end" android:layout_marginEnd="-25dp" android:layout_marginBottom="-25dp" app:cardBackgroundColor="#EE2979FF" app:cardCornerRadius="60dp" app:cardElevation="0dp" app:strokeWidth="0dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Seguridad" android:textColor="#FFFFFF" android:textSize="17sp" android:textStyle="bold" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="1" android:shadowRadius="4"/>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
         </HorizontalScrollView>
 
-        <!-- PANEL SELECTOR DE COLORES FIJOS -->
-        <HorizontalScrollView
-            android:id="@+id/panelSubModosColor"
-            android:layout_width="match_parent"
+        <!-- Contenedor Maestro de Sub-paneles -->
+        <FrameLayout
+            android:id="@+id/contenedorSubPaneles"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingHorizontal="24dp"
-            android:scrollbars="none"
-            android:visibility="gone">
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="8dp" android:gravity="center_vertical">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="16dp" android:text="Elegir Color:" android:textColor="#64748B" android:textSize="14sp" android:textStyle="bold" />
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorRojo" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#EF4444" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorNaranja" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#F97316" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorVerde" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#22C55E" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorCian" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#06B6D4" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorAzul" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#3B82F6" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorRosa" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#EC4899" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorBlanco" android:layout_width="55dp" android:layout_height="55dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#E2E8F0" app:strokeWidth="2dp"/>
-            </LinearLayout>
-        </HorizontalScrollView>
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scrollModosLuz">
 
-        <!-- PANEL NEÓN -->
-        <HorizontalScrollView
-            android:id="@+id/panelSubModosNeon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingHorizontal="24dp"
-            android:scrollbars="none"
-            android:visibility="gone">
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="8dp">
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonClasico" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Neón Clásico" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Verde Esmeralda" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonArcoiris" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Arcoíris Neón" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Transición suave" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonCyberpunk" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cyberpunk" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Rosa y Cian" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonRespiracion" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Respiración" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Fade In / Fade Out" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonPlasma" android:layout_width="145dp" android:layout_height="65dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Plasma" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Efecto eléctrico" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- SUB-PANEL SEGURIDAD -->
-        <LinearLayout
-            android:id="@+id/panelSubModosSeguridad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- PANEL RITMO -->
+            <LinearLayout
+                android:id="@+id/panelSubModosRitmo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="24dp"
-                android:paddingBottom="12dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Estado del Sistema"
-                    android:textColor="#64748B"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switchSeguridadMaster"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:orientation="vertical"
+                android:visibility="gone">
 
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="24dp"
+                    android:scrollbars="none">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="8dp">
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoAuto" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Auto-Rotación" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Cicla 12 Estilos" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoVu" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VU Meter" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Verde a Rojo" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoEspectro" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Espectro RGB" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Arcoíris dinámico" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoBeat" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Arcoíris Beat" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Giro acelerado" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoFuego" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fuego Rítmico" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Llamas con la voz" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoDestellos" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Destellos" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Chispas rítmicas" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRitmoPulso" android:layout_width="145dp" android:layout_height="65dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pulso Bass" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Impacto de color" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Barras de monitoreo de espectro frecuencial audio -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Espectro Frecuencial Audio"
+                            android:textColor="#0F172A"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <!-- Graves (Bass) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:text="Graves"
+                                android:textColor="#64748B"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ProgressBar
+                                android:id="@+id/pbGraves"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="6dp"
+                                android:layout_weight="1"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressBackgroundTint="#CBD5E1"
+                                android:progressTint="#EF4444" />
+
+                            <TextView
+                                android:id="@+id/tvGravesPct"
+                                android:layout_width="38dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:text="0%"
+                                android:textColor="#EF4444"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Medios (Mid) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:text="Medios"
+                                android:textColor="#64748B"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ProgressBar
+                                android:id="@+id/pbMedios"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="6dp"
+                                android:layout_weight="1"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressBackgroundTint="#CBD5E1"
+                                android:progressTint="#22C55E" />
+
+                            <TextView
+                                android:id="@+id/tvMediosPct"
+                                android:layout_width="38dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:text="0%"
+                                android:textColor="#22C55E"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Agudos (Treble) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:text="Agudos"
+                                android:textColor="#64748B"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ProgressBar
+                                android:id="@+id/pbAgudos"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="6dp"
+                                android:layout_weight="1"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressBackgroundTint="#CBD5E1"
+                                android:progressTint="#3B82F6" />
+
+                            <TextView
+                                android:id="@+id/tvAgudosPct"
+                                android:layout_width="38dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:text="0%"
+                                android:textColor="#3B82F6"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- PANEL SELECTOR DE COLORES FIJOS (13 Colores + Más Colores) -->
             <HorizontalScrollView
+                android:id="@+id/panelSubModosColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:paddingHorizontal="24dp"
-                android:scrollbars="none">
+                android:scrollbars="none"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="8dp" android:gravity="center_vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="16dp" android:text="Elegir Color:" android:textColor="#64748B" android:textSize="14sp" android:textStyle="bold" />
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorRojo" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FF0000" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorNaranja" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FF4500" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorAmarillo" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFD000" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorLima" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#76FF03" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorVerde" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#00E676" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorTurquesa" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#00BFA5" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorCian" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#00E5FF" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorAzul" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#2979FF" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorMorado" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#AA00FF" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorRosa" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FF007F" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorCoral" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FF1744" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorCalido" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFAB40" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#88FFFFFF" app:strokeWidth="1dp"/>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/btnColorBlanco" android:layout_width="55dp" android:layout_height="55dp" android:layout_marginEnd="12dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="28dp" app:cardElevation="2dp" app:strokeColor="#E2E8F0" app:strokeWidth="2dp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnColorMasColores"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="#1E293B"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="2dp"
+                        app:strokeColor="#475569"
+                        app:strokeWidth="1dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- PANEL NEÓN -->
+            <LinearLayout
+                android:id="@+id/panelSubModosNeon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="24dp"
+                    android:scrollbars="none">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="8dp">
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonClasico" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Neón Clásico" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Verde Esmeralda" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonArcoiris" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Arcoíris Neón" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Transición suave" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonCyberpunk" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cyberpunk" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Rosa y Cian" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonRespiracion" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Respiración" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Fade In / Fade Out" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                        <com.google.android.material.card.MaterialCardView android:id="@+id/cardNeonPlasma" android:layout_width="145dp" android:layout_height="65dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Plasma" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Efecto eléctrico" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Control de Velocidad Neón -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="#E2E8F0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Velocidad del efecto:"
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <SeekBar
+                            android:id="@+id/sbVelocidadNeon"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:max="9"
+                            android:progress="4"
+                            android:progressTint="#00B4D8"
+                            android:thumbTint="#00B4D8" />
+
+                        <TextView
+                            android:id="@+id/tvVelocidadNeonVal"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="5"
+                            android:textColor="#0284C7"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- PANEL AMBIENTE -->
+            <HorizontalScrollView
+                android:id="@+id/panelSubModosAmbiente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingHorizontal="24dp"
+                android:scrollbars="none"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbAuto" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Auto Ambiente" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Rota todos los climas" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbTormenta" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tormenta" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Rayos y relámpagos" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbFuego" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fuego" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Llamas de chimenea" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbOceano" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Océano" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Olas marinas" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbNaturaleza" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Naturaleza" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Bosque y luciérnagas" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbAurora" android:layout_width="145dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aurora" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Luces del norte" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView android:id="@+id/cardAmbAtardecer" android:layout_width="145dp" android:layout_height="65dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="vertical" android:paddingHorizontal="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Atardecer" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Cielo cálido" android:textColor="#64748B" android:textSize="11sp" /></LinearLayout></com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- SUB-PANEL SEGURIDAD -->
+            <HorizontalScrollView
+                android:id="@+id/panelSubModosSeguridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingHorizontal="24dp"
+                android:scrollbars="none"
+                android:visibility="gone">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -436,267 +903,429 @@
                     <com.google.android.material.card.MaterialCardView android:id="@+id/cardSegTv" android:layout_width="140dp" android:layout_height="65dp" android:layout_marginEnd="10dp" android:clickable="true" android:focusable="true" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="12dp" app:cardElevation="1dp" app:strokeColor="#CBD5E1" app:strokeWidth="1dp"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Simulación TV" android:textColor="#0F172A" android:textSize="14sp" android:textStyle="bold" /></com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
             </HorizontalScrollView>
+        </FrameLayout>
+
+        <!-- Control de Brillo General -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBrillo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="14dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contenedorSubPaneles">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="24dp"
-                android:paddingTop="8dp"
-                android:gravity="center_vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tiempo:" android:textColor="#64748B" android:textSize="14sp" android:textStyle="bold"/>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#CBD5E1"
-                    app:strokeWidth="1dp">
-                    <EditText
-                        android:id="@+id/etSeguridadTiempo"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:gravity="center"
-                        android:inputType="number"
-                        android:text="5"
+                    <TextView
+                        android:id="@+id/tvBrilloTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Brillo de Tira LED"
                         android:textColor="#0F172A"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPorcentajeBrillo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100%"
+                        android:textColor="#0284C7"
                         android:textSize="14sp"
-                        android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardTiempoSeg"
-                    android:layout_width="45dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#CBD5E1"
-                    app:strokeWidth="1dp">
-                    <TextView android:id="@+id/tvTiempoSeg" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Seg" android:textColor="#64748B" android:textSize="12sp" android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardTiempoMin"
-                    android:layout_width="45dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="4dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="#00B4D8"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="0dp">
-                    <TextView android:id="@+id/tvTiempoMin" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="Min" android:textColor="#FFFFFF" android:textSize="12sp" android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
-
-                <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="6dp" android:text="Fijo" android:textColor="#64748B" android:textSize="14sp" android:textStyle="bold"/>
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switchSeguridadPermanente"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <SeekBar
+                    android:id="@+id/sbBrilloLed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:max="255"
+                    android:progress="255"
+                    android:progressTint="#00B4D8"
+                    android:thumbTint="#00B4D8" />
             </LinearLayout>
-        </LinearLayout>
-    </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    <!-- Ajustes Sensibilidad Microfono -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardEqualizer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="18dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="2dp"
-        app:strokeColor="#E2E8F0"
-        app:strokeWidth="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contenedorSubPaneles">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Ajustes Sensibilidad Microfono -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEqualizer"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="16dp">
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="14dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardBrillo">
 
-            <!--  Micrófono con Interruptor -->
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:paddingHorizontal="18dp">
-                <TextView
-                    android:id="@+id/tvMicTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Sensibilidad de Audio (KY-037)"
-                    android:textColor="#0F172A"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switchMic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:orientation="vertical"
+                android:paddingVertical="16dp">
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:paddingHorizontal="18dp"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <!--  Micrófono con Interruptor -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:paddingHorizontal="18dp">
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cardSensEstandar"
-                        android:layout_width="115dp"
-                        android:layout_height="80dp"
-                        android:layout_marginEnd="10dp"
+                    <TextView
+                        android:id="@+id/tvMicTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Sensibilidad de Audio (KY-037)"
+                        android:textColor="#0F172A"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/btnInfoMic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:gravity="center"
                         android:clickable="true"
                         android:focusable="true"
-                        app:cardBackgroundColor="#00B4D8"
-                        app:cardCornerRadius="18dp"
-                        app:cardElevation="0dp"
-                        app:strokeWidth="0dp">
-                        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        android:padding="6dp"
+                        android:text="ⓘ"
+                        android:textColor="#0284C7"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tvMicTitle"
+                        app:layout_constraintStart_toEndOf="@id/tvMicTitle"
+                        app:layout_constraintTop_toTopOf="@id/tvMicTitle" />
 
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchMic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/scrollSensibilidadAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="18dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardSensEstandar"
+                            android:layout_width="115dp"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="10dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="#00B4D8"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+                            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tvSensEstandar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="ESTÁNDAR"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardSensSuave"
+                            android:layout_width="115dp"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="10dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="#F8FAFC"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#E2E8F0"
+                            app:strokeWidth="1dp">
                             <TextView
-                                android:id="@+id/tvSensEstandar"
+                                android:id="@+id/tvSensSuave"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="ESTÁNDAR"
+                                android:text="SUAVE"
+                                android:textColor="#334155"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardSensFiesta"
+                            android:layout_width="115dp"
+                            android:layout_height="80dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="#F8FAFC"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#E2E8F0"
+                            app:strokeWidth="1dp">
+                            <TextView
+                                android:id="@+id/tvSensFiesta"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="FIESTA"
+                                android:textColor="#334155"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Modulo PIR Desplegable -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPirBoost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardEqualizer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="16dp">
+
+                <!-- Encabezado PIR -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvPirTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Alarma de Movimiento PIR"
+                        android:textColor="#0F172A"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/btnInfoPir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="6dp"
+                        android:text="ⓘ"
+                        android:textColor="#0284C7"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tvPirTitle"
+                        app:layout_constraintStart_toEndOf="@id/tvPirTitle"
+                        app:layout_constraintTop_toTopOf="@id/tvPirTitle" />
+
+                    <TextView
+                        android:id="@+id/tvEstadoPir"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Sensor HC-SR501: Sin movimiento detectado"
+                        android:textColor="#64748B"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@+id/switchPir"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPirTitle" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchPir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Configuración Desplegable del Temporizador PIR -->
+                <LinearLayout
+                    android:id="@+id/layoutConfigPir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#E2E8F0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Duración PIR:"
+                            android:textColor="#64748B"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#CBD5E1"
+                            app:strokeWidth="1dp">
+                            <EditText
+                                android:id="@+id/etSeguridadTiempo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="5"
+                                android:textColor="#0F172A"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardTiempoSeg"
+                            android:layout_width="45dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#CBD5E1"
+                            app:strokeWidth="1dp">
+                            <TextView
+                                android:id="@+id/tvTiempoSeg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Seg"
+                                android:textColor="#64748B"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardTiempoMin"
+                            android:layout_width="45dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="#00B4D8"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+                            <TextView
+                                android:id="@+id/tvTiempoMin"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Min"
                                 android:textColor="#FFFFFF"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
-                        </FrameLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                        </com.google.android.material.card.MaterialCardView>
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cardSensSuave"
-                        android:layout_width="115dp"
-                        android:layout_height="80dp"
-                        android:layout_marginEnd="10dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardBackgroundColor="#F8FAFC"
-                        app:cardCornerRadius="18dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="#E2E8F0"
-                        app:strokeWidth="1dp">
-                        <TextView
-                            android:id="@+id/tvSensSuave"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="SUAVE"
-                            android:textColor="#334155"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-                    </com.google.android.material.card.MaterialCardView>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cardSensFiesta"
-                        android:layout_width="115dp"
-                        android:layout_height="80dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        app:cardBackgroundColor="#F8FAFC"
-                        app:cardCornerRadius="18dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="#E2E8F0"
-                        app:strokeWidth="1dp">
                         <TextView
-                            android:id="@+id/tvSensFiesta"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="FIESTA"
-                            android:textColor="#334155"
-                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:text="Fijo"
+                            android:textColor="#64748B"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
-                    </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchSeguridadPermanente"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
                 </LinearLayout>
-            </HorizontalScrollView>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    <!-- Modulo PIR -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardPirBoost"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="12dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="2dp"
-        app:strokeColor="#E2E8F0"
-        app:strokeWidth="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardEqualizer">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="16dp">
-            <TextView
-                android:id="@+id/tvPirTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="Alarma de Movimiento PIR  ⓘ"
-                android:textColor="#0F172A"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <TextView
-                android:id="@+id/tvEstadoPir"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Sensor HC-SR501: Sin movimiento detectado"
-                android:textColor="#64748B"
-                android:textSize="13sp"
-                app:layout_constraintEnd_toStartOf="@+id/switchPir"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvPirTitle" />
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switchPir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
